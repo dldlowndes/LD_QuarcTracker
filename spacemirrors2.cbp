@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="spacemirrors2" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Windows">
+				<Option platforms="Windows;" />
+				<Option output="bin/Release/spacemirrors2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-pedantic" />
+					<Add option="-Wextra" />
+					<Add option="-Wall" />
+					<Add option="-std=c++1z" />
+					<Add directory="src" />
+					<Add directory="include" />
+					<Add directory="C:/Program Files/IDS/uEye/Develop/include" />
+					<Add directory="C:/My Local Docs/Libraries/opencv-2.4.13.6-mingw32/install/include" />
+					<Add directory="daveutil/cpp/include" />
+				</Compiler>
+				<Linker>
+					<Add library="uEye_api" />
+					<Add library="C:/My Local Docs/Libraries/opencv-2.4.13.6-mingw32/install/x86/mingw/staticlib/libIlmImf.a" />
+					<Add library="C:/My Local Docs/Libraries/opencv-2.4.13.6-mingw32/install/x86/mingw/staticlib/liblibjasper.a" />
+					<Add library="C:/My Local Docs/Libraries/opencv-2.4.13.6-mingw32/install/x86/mingw/staticlib/liblibjpeg.a" />
+					<Add library="C:/My Local Docs/Libraries/opencv-2.4.13.6-mingw32/install/x86/mingw/staticlib/liblibpng.a" />
+					<Add library="C:/My Local Docs/Libraries/opencv-2.4.13.6-mingw32/install/x86/mingw/staticlib/liblibtiff.a" />
+					<Add library="C:/My Local Docs/Libraries/opencv-2.4.13.6-mingw32/install/x86/mingw/staticlib/libopencv_calib3d2413.a" />
+					<Add library="C:/My Local Docs/Libraries/opencv-2.4.13.6-mingw32/install/x86/mingw/staticlib/libopencv_contrib2413.a" />
+					<Add library="C:/My Local Docs/Libraries/opencv-2.4.13.6-mingw32/install/x86/mingw/staticlib/libopencv_core2413.a" />
+					<Add library="C:/My Local Docs/Libraries/opencv-2.4.13.6-mingw32/install/x86/mingw/staticlib/libopencv_features2d2413.a" />
+					<Add library="C:/My Local Docs/Libraries/opencv-2.4.13.6-mingw32/install/x86/mingw/staticlib/libopencv_flann2413.a" />
+					<Add library="C:/My Local Docs/Libraries/opencv-2.4.13.6-mingw32/install/x86/mingw/staticlib/libopencv_gpu2413.a" />
+					<Add library="C:/My Local Docs/Libraries/opencv-2.4.13.6-mingw32/install/x86/mingw/staticlib/libopencv_highgui2413.a" />
+					<Add library="C:/My Local Docs/Libraries/opencv-2.4.13.6-mingw32/install/x86/mingw/staticlib/libopencv_imgproc2413.a" />
+					<Add library="C:/My Local Docs/Libraries/opencv-2.4.13.6-mingw32/install/x86/mingw/staticlib/libopencv_legacy2413.a" />
+					<Add library="C:/My Local Docs/Libraries/opencv-2.4.13.6-mingw32/install/x86/mingw/staticlib/libopencv_ml2413.a" />
+					<Add library="C:/My Local Docs/Libraries/opencv-2.4.13.6-mingw32/install/x86/mingw/staticlib/libopencv_nonfree2413.a" />
+					<Add library="C:/My Local Docs/Libraries/opencv-2.4.13.6-mingw32/install/x86/mingw/staticlib/libopencv_objdetect2413.a" />
+					<Add library="C:/My Local Docs/Libraries/opencv-2.4.13.6-mingw32/install/x86/mingw/staticlib/libopencv_photo2413.a" />
+					<Add library="C:/My Local Docs/Libraries/opencv-2.4.13.6-mingw32/install/x86/mingw/staticlib/libopencv_stitching2413.a" />
+					<Add library="C:/My Local Docs/Libraries/opencv-2.4.13.6-mingw32/install/x86/mingw/staticlib/libopencv_superres2413.a" />
+					<Add library="C:/My Local Docs/Libraries/opencv-2.4.13.6-mingw32/install/x86/mingw/staticlib/libopencv_ts2413.a" />
+					<Add library="C:/My Local Docs/Libraries/opencv-2.4.13.6-mingw32/install/x86/mingw/staticlib/libopencv_video2413.a" />
+					<Add library="C:/My Local Docs/Libraries/opencv-2.4.13.6-mingw32/install/x86/mingw/staticlib/libopencv_videostab2413.a" />
+					<Add library="C:/My Local Docs/Libraries/opencv-2.4.13.6-mingw32/install/x86/mingw/staticlib/libzlib.a" />
+					<Add directory="C:/Program Files/IDS/uEye/Develop/Lib" />
+					<Add directory="C:/My Local Docs/Libraries/opencv-2.4.13.6-mingw32/install/x86/mingw/staticlib" />
+				</Linker>
+			</Target>
+			<Target title="Linux">
+				<Option platforms="Unix;" />
+				<Option output="bin/Release/spacemirrors2" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="daveutil/cpp/include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="libueye_api" />
+					<Add library="libopencv_core" />
+					<Add library="libopencv_features2d" />
+					<Add library="libopencv_highgui" />
+					<Add library="libopencv_imgproc" />
+					<Add library="libopencv_imgcodecs" />
+					<Add library="pthread" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-O2" />
+			<Add option="-pedantic" />
+			<Add option="-Wextra" />
+			<Add option="-Wall" />
+			<Add option="-std=c++11" />
+			<Add directory="src" />
+			<Add directory="include" />
+			<Add directory="../davemirrorcle2/include" />
+			<Add directory="../davemirrorcle2/src" />
+			<Add directory="../daveutil/cpp/include" />
+			<Add directory="../daveutil/cpp/src" />
+			<Add directory="../davecamera2/include" />
+			<Add directory="../davecamera2/src" />
+			<Add directory="../daveutil/rs232/include" />
+			<Add directory="../daveutil/rs232/src" />
+			<Add directory="../daveutil/INI_Reader/include" />
+			<Add directory="../daveutil/INI_Reader/src" />
+		</Compiler>
+		<Unit filename="config/GeneralSettings.ini" />
+		<Unit filename="include/DavePID.h" />
+		<Unit filename="include/DaveUtil.h" />
+		<Unit filename="include/INIReader.h" />
+		<Unit filename="include/davecamera2.h" />
+		<Unit filename="include/davemirrorcle2.h" />
+		<Unit filename="include/davetimer.h" />
+		<Unit filename="include/davetracker.h" />
+		<Unit filename="include/ini.h" />
+		<Unit filename="include/rs232.h" />
+		<Unit filename="include/trackercamera.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="src/DavePID.cpp" />
+		<Unit filename="src/DaveUtil.cpp" />
+		<Unit filename="src/INIReader.cpp" />
+		<Unit filename="src/davecamera2.cpp" />
+		<Unit filename="src/davemirrorcle2.cpp" />
+		<Unit filename="src/davetimer.cpp" />
+		<Unit filename="src/davetracker.cpp" />
+		<Unit filename="src/ini.cpp" />
+		<Unit filename="src/rs232.cpp" />
+		<Unit filename="src/trackercamera.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

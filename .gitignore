@@ -1,0 +1,8 @@
+*.layout
+*.depend
+bin/*
+obj/*
+*.csv
+*.bin
+*.dat
+*.png
