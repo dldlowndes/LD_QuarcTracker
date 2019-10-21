@@ -94,27 +94,27 @@
 			<Add directory="../daveutil/INI_Reader/include" />
 			<Add directory="../daveutil/INI_Reader/src" />
 		</Compiler>
+		<Unit filename="../davecamera2/include/davecamera2.h" />
+		<Unit filename="../davecamera2/src/davecamera2.cpp" />
+		<Unit filename="../davemirrorcle2/include/davemirrorcle2.h" />
+		<Unit filename="../davemirrorcle2/src/davemirrorcle2.cpp" />
+		<Unit filename="../daveutil/INI_Reader/include/INIReader.h" />
+		<Unit filename="../daveutil/INI_Reader/include/ini.h" />
+		<Unit filename="../daveutil/INI_Reader/src/INIReader.cpp" />
+		<Unit filename="../daveutil/INI_Reader/src/ini.cpp" />
+		<Unit filename="../daveutil/cpp/include/DavePID.h" />
+		<Unit filename="../daveutil/cpp/include/DaveUtil.h" />
+		<Unit filename="../daveutil/cpp/include/davetimer.h" />
+		<Unit filename="../daveutil/cpp/src/DavePID.cpp" />
+		<Unit filename="../daveutil/cpp/src/DaveUtil.cpp" />
+		<Unit filename="../daveutil/cpp/src/davetimer.cpp" />
+		<Unit filename="../daveutil/rs232/include/rs232.h" />
+		<Unit filename="../daveutil/rs232/src/rs232.cpp" />
 		<Unit filename="config/GeneralSettings.ini" />
-		<Unit filename="include/DavePID.h" />
-		<Unit filename="include/DaveUtil.h" />
-		<Unit filename="include/INIReader.h" />
-		<Unit filename="include/davecamera2.h" />
-		<Unit filename="include/davemirrorcle2.h" />
-		<Unit filename="include/davetimer.h" />
 		<Unit filename="include/davetracker.h" />
-		<Unit filename="include/ini.h" />
-		<Unit filename="include/rs232.h" />
 		<Unit filename="include/trackercamera.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/DavePID.cpp" />
-		<Unit filename="src/DaveUtil.cpp" />
-		<Unit filename="src/INIReader.cpp" />
-		<Unit filename="src/davecamera2.cpp" />
-		<Unit filename="src/davemirrorcle2.cpp" />
-		<Unit filename="src/davetimer.cpp" />
 		<Unit filename="src/davetracker.cpp" />
-		<Unit filename="src/ini.cpp" />
-		<Unit filename="src/rs232.cpp" />
 		<Unit filename="src/trackercamera.cpp" />
 		<Extensions>
 			<code_completion />

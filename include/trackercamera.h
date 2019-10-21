@@ -3,6 +3,7 @@
 
 #include "davecamera2.h"
 
+#define HAVE_OPENCV
 #ifdef HAVE_OPENCV
 #include "opencv/cv.h"
 #include "opencv2/core/core.hpp"
