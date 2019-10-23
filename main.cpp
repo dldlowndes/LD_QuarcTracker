@@ -1,8 +1,6 @@
 #include "davetracker.h"
 #include <iostream>
 
-#define HAVE_OPENCV
-
 int main(){
     DaveTracker2::APTOptions my_Options =
         DaveTracker2::Load_Ini_Files("config/GeneralSettings.ini");
