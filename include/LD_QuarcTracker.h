@@ -1,16 +1,16 @@
-#ifndef DAVETRACKER_H
-#define DAVETRACKER_H
+#ifndef QUARCTRACKER_H
+#define QUARCTRACKER_H
 
-#include "davecamera2.h"
-#include "trackercamera.h"
-#include "davemirrorcle2.h"
-#include "DaveUtil.h"
-#include "DavePID.h"
-#include "davetimer.h"
+#include "LD_Camera.h"
+#include "LD_TrackerCamera.h"
+#include "LD_MemsMirror.h"
+#include "LD_Util.h"
+#include "LD_Pid.h"
+#include "LD_Timer.h"
 
 #include <list>
 
-namespace DaveTracker2{
+namespace LD_QuarcTracker{
 
     struct TrackerOptions{
         // Recommended, speeds up tracker a lot.
@@ -25,11 +25,11 @@ namespace DaveTracker2{
         // Ignored if 0;
         int tracker_Period;
 
-        SpotFinderOptions full_Spot_Finder;
-        SpotFinderOptions aoi_Spot_Finder;
+        LD_QuarcTracker::SpotFinderOptions full_Spot_Finder;
+        LD_QuarcTracker::SpotFinderOptions aoi_Spot_Finder;
 
-        DaveCamera2::Pixel_Values full_Setpoint;
-        DaveCamera2::Pixel_Values aoi_Setpoint;
+        LD_Camera::Pixel_Values full_Setpoint;
+        LD_Camera::Pixel_Values aoi_Setpoint;
 
         // PID parameters for the mirror control.
         PIDParams full_PID_Options;
@@ -56,8 +56,8 @@ namespace DaveTracker2{
 
     struct APTOptions{
         TrackerOptions tracker_Options;
-        DaveCamera2::CameraOptions camera_Options;
-        DaveMirrorcle2::MirrorOptions mirror_Options;
+        LD_Camera::CameraOptions camera_Options;
+        LD_MemsMirror::MirrorOptions mirror_Options;
     };
 
     APTOptions Load_Ini_Files(std::string tracker_Ini_Filename);
@@ -82,8 +82,8 @@ namespace DaveTracker2{
             // Get/Set the set point for the tracker. this is the co-ordinates
             // on the full frame image the tracker will try to get the spot to
             // and then the centre of the AOI once the spot is close enough.
-            DaveCamera2::Pixel_Values Get_Setpoint();
-            int Set_Setpoint(DaveCamera2::Pixel_Values new_Setpoint);
+            LD_Camera::Pixel_Values Get_Setpoint();
+            int Set_Setpoint(LD_Camera::Pixel_Values new_Setpoint);
 
         private:
             // Get the spot error based on the spot finder co-ordinates and the
@@ -109,17 +109,17 @@ namespace DaveTracker2{
             // the AOI) but the full set point could theoretically be anywhere
             // in the frame if required. For example to correct for a small
             // misalignment in the APT optics.
-            DaveCamera2::Pixel_Values full_Setpoint;
-            DaveCamera2::Pixel_Values aoi_Setpoint;
+            LD_Camera::Pixel_Values full_Setpoint;
+            LD_Camera::Pixel_Values aoi_Setpoint;
             // This is set when the AOI is toggled to the relevant value.
-            DaveCamera2::Pixel_Values active_Setpoint;
+            LD_Camera::Pixel_Values active_Setpoint;
             // If a spot is found by the spot finder, this is the co-ordinates.
-            DaveCamera2::Subpixel_Values spot_Coords;
+            LD_Camera::Subpixel_Values spot_Coords;
             // Distance from the found spot to the set point.
-            DaveCamera2::Subpixel_Values spot_Error;
+            LD_Camera::Subpixel_Values spot_Error;
 
             // The Mirrorcle MEMS mirror performing the fine tracking.
-            DaveMirrorcle2::Mirror my_Mirror;
+            LD_MemsMirror::Mirror my_Mirror;
 
             // The PID loop mediating the closed loop control may need
             // different settings for the full frame and the AOI since
@@ -190,4 +190,4 @@ namespace DaveTracker2{
     };
 } // namespace DaveTracker2
 
-#endif // DAVETRACKER_H
+#endif // QUARCTRACKER_H

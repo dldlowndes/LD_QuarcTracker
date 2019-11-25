@@ -1,17 +1,17 @@
-#include "trackercamera.h"
+#include "LD_TrackerCamera.h"
 
 #include <algorithm>
 #include <cmath>
 #include <fstream>
 #include <iostream>
 
-namespace DaveTracker2{
+namespace LD_QuarcTracker{
     int TrackerCamera::Set_SpotFinder_Options(SpotFinderOptions options){
         my_Options = options;
         return 0;
     }
 
-    bool TrackerCamera::Spot_Finder(DaveCamera2::Subpixel_Values& spot_Coords){
+    bool TrackerCamera::Spot_Finder(LD_Camera::Subpixel_Values& spot_Coords){
         // Project the image on the X and Y axes, this should look like two
         // gaussians (ish) if there is a single gaussian spot in the image
         // and n_Peak_Pixels will be relatively small (ie few bright pixels)
@@ -55,7 +55,7 @@ namespace DaveTracker2{
         // it could be the full frame, AOI is just a useful container for the
         // information. This allows the spot finder to interpret the image
         // buffer.
-        DaveCamera2::AOI my_AOI;
+        LD_Camera::AOI my_AOI;
 
         // Look at the correct image data from the camera.
         if(aoi_Set){
@@ -150,7 +150,7 @@ namespace DaveTracker2{
     }
 
     #ifdef HAVE_OPENCV
-    int TrackerCamera::Make_Opencv_Mat(DaveCamera2::AOI my_AOI){
+    int TrackerCamera::Make_Opencv_Mat(LD_Camera::AOI my_AOI){
         // Make a mat that looks a lot like the vector we had in the first
         // place. (but 2d!). Easiest to make it B&W then convert to colour.
         myMat = cv::Mat(my_AOI.aoi_Size.s32Height,
@@ -171,14 +171,14 @@ namespace DaveTracker2{
         return cv::waitKey(1);
     }
 
-    int TrackerCamera::Draw_Spot(DaveCamera2::Subpixel_Values spot_Position, cv::Scalar colour){
+    int TrackerCamera::Draw_Spot(LD_Camera::Subpixel_Values spot_Position, cv::Scalar colour){
         // Draw a spot on the currently stored mat containing the camera image.
         cv::Point spot_Centre((int)spot_Position.x, (int)spot_Position.y);
         cv::circle(myMat, spot_Centre, 15, colour, 2, 8, 0);
         return 0;
     }
 
-    int TrackerCamera::Draw_AOI(DaveCamera2::AOI my_AOI){
+    int TrackerCamera::Draw_AOI(LD_Camera::AOI my_AOI){
         // Draw a rectangle corresponding to the AOI position in the full
         // frame.
         cv::Point top_Left(my_AOI.aoi_Position.s32X,
@@ -198,7 +198,7 @@ namespace DaveTracker2{
 
         // TODO: This is actually a call to the camera API, check the
         // performance implications of this.
-        DaveCamera2::AOI current_AOI = Get_Active_Frame_Info();
+        LD_Camera::AOI current_AOI = Get_Active_Frame_Info();
 
         if(aoi_Set){
             image_Buffer = aoi_Image_Data;

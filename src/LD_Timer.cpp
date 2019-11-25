@@ -1,4 +1,4 @@
-#include "davetimer.h"
+#include "LD_Timer.h"
 
 DaveTimer::DaveTimer()
 {

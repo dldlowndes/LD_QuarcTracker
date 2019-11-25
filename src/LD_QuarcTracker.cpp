@@ -1,4 +1,4 @@
-#include "davetracker.h"
+#include "LD_QuarcTracker.h"
 #include "INIReader.h"
 #include "rs232.h"
 
@@ -8,7 +8,7 @@
 #include <iostream>
 #include <string>
 
-namespace DaveTracker2{
+namespace LD_QuarcTracker{
     APTOptions Load_Ini_Files(std::string tracker_Ini_Filename){
         // Load the ini files for dumping out to structs.
         INIReader tracker_Ini(tracker_Ini_Filename);
@@ -21,11 +21,11 @@ namespace DaveTracker2{
         // co-ordinate of the AOI)
         // This also makes it easy to define the set point of the tracker as
         // the middle of the AOI.
-        DaveCamera2::Pixel_Values aoi_Middle = {
+        LD_Camera::Pixel_Values aoi_Middle = {
             (int)tracker_Ini.GetInteger("Camera Settings", "AOI_Position_X", 640),
             (int)tracker_Ini.GetInteger("Camera Settings", "AOI_Position_Y", 512)
         };
-        DaveCamera2::Pixel_Values aoi_Size = {
+        LD_Camera::Pixel_Values aoi_Size = {
             (int)tracker_Ini.GetInteger("Camera Settings", "AOI_Size_X", 256),
             (int)tracker_Ini.GetInteger("Camera Settings", "AOI_Size_Y", 256)
         };
@@ -173,7 +173,7 @@ namespace DaveTracker2{
     }
 
     int Tracker::Init(APTOptions my_Options){
-        switch (DaveCamera2::FindCameras()){
+        switch (LD_Camera::FindCameras()){
             case 0:
                 std::cout << "Error, no cameras found" << std::endl;
                 return 1;
@@ -197,7 +197,7 @@ namespace DaveTracker2{
         // Grab the AOI dimensions from the camera to set some parameters
         // of the tracker that need this
         use_AOI = my_Options.tracker_Options.do_AOI;
-        DaveCamera2::AOI temp_AOI = my_Options.camera_Options.aoi_Dimensions;
+        LD_Camera::AOI temp_AOI = my_Options.camera_Options.aoi_Dimensions;
 
         // aoi_Boundary is the boundary of where the AOI should trigger ON
         // if this is set at the actual edge of the AOI and during the AOI
@@ -226,11 +226,11 @@ namespace DaveTracker2{
         return 0;
     }
 
-    DaveCamera2::Pixel_Values Tracker::Get_Setpoint(){
+    LD_Camera::Pixel_Values Tracker::Get_Setpoint(){
         return active_Setpoint;
     }
 
-    int Tracker::Set_Setpoint(DaveCamera2::Pixel_Values new_Setpoint){
+    int Tracker::Set_Setpoint(LD_Camera::Pixel_Values new_Setpoint){
         active_Setpoint = new_Setpoint;
         return 0;
     }

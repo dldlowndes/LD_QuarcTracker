@@ -1,5 +1,5 @@
-#ifndef DAVECAMERA_H
-#define DAVECAMERA_H
+#ifndef LDCAMERA_H
+#define LDCAMERA_H
 
 
 #include <string>
@@ -11,7 +11,7 @@
 #include <uEye.h>
 #pragma GCC diagnostic pop
 
-namespace DaveCamera2{
+namespace LD_Camera{
     int FindCameras();
 
     struct Pixel_Values{
@@ -179,9 +179,9 @@ namespace DaveCamera2{
             bool is_Connected = false;
             bool is_Initted = false;
     };
-} // namespace DaveCamera2
+} // namespace LD_Camera
 
-int Test_AOI(DaveCamera2::CameraOptions my_Options);
-int Test_Multi(DaveCamera2::CameraOptions my_Options);
+int Test_AOI(LD_Camera::CameraOptions my_Options);
+int Test_Multi(LD_Camera::CameraOptions my_Options);
 
-#endif // DAVECAMERA_H
+#endif // LDCAMERA_H

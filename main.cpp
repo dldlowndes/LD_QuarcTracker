@@ -1,11 +1,11 @@
-#include "davetracker.h"
+#include "LD_QuarcTracker.h"
 #include <iostream>
 
 int main(){
-    DaveTracker2::APTOptions my_Options =
-        DaveTracker2::Load_Ini_Files("config/GeneralSettings.ini");
+    LD_QuarcTracker::APTOptions my_Options =
+        LD_QuarcTracker::Load_Ini_Files("config/GeneralSettings.ini");
 
-    DaveTracker2::Tracker my_Tracker(my_Options);
+    LD_QuarcTracker::Tracker my_Tracker(my_Options);
 
     std::cout << "Ready, press enter to start" << std::endl;
     std::cin.get();

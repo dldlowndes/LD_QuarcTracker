@@ -2,9 +2,9 @@
 #include <iostream>
 
 
-#include "davecamera2.h"
+#include "LD_Camera.h"
 
-namespace DaveCamera2{
+namespace LD_Camera{
     int FindCameras(){
         int num_Cameras = 0;
         is_GetNumberOfCameras(&num_Cameras);
@@ -369,8 +369,8 @@ namespace DaveCamera2{
 
 } // namespace DaveCamera
 
-int Test_AOI(DaveCamera2::CameraOptions my_Options){
-    DaveCamera2::Camera my_Camera(my_Options);
+int Test_AOI(LD_Camera::CameraOptions my_Options){
+    LD_Camera::Camera my_Camera(my_Options);
 
     my_Camera.Enable_AOI();
     my_Camera.Take_Picture();
@@ -383,8 +383,8 @@ int Test_AOI(DaveCamera2::CameraOptions my_Options){
     return 0;
 }
 
-int Test_Multi(DaveCamera2::CameraOptions my_Options){
-    DaveCamera2::Camera my_Camera(my_Options);
+int Test_Multi(LD_Camera::CameraOptions my_Options){
+    LD_Camera::Camera my_Camera(my_Options);
 
     for(int i=0; i<50; i++){
         my_Camera.Take_Picture();

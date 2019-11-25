@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="spacemirrors2" />
+		<Option title="LD_QuarcTracker" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
@@ -84,27 +84,27 @@
 			<Add directory="include" />
 		</Compiler>
 		<Unit filename="config/GeneralSettings.ini" />
-		<Unit filename="include/DavePID.h" />
-		<Unit filename="include/DaveUtil.h" />
 		<Unit filename="include/INIReader.h" />
-		<Unit filename="include/davecamera2.h" />
-		<Unit filename="include/davemirrorcle2.h" />
-		<Unit filename="include/davetimer.h" />
-		<Unit filename="include/davetracker.h" />
+		<Unit filename="include/LD_Camera.h" />
+		<Unit filename="include/LD_MemsMirror.h" />
+		<Unit filename="include/LD_Pid.h" />
+		<Unit filename="include/LD_QuarcTracker.h" />
+		<Unit filename="include/LD_Timer.h" />
+		<Unit filename="include/LD_TrackerCamera.h" />
+		<Unit filename="include/LD_Util.h" />
 		<Unit filename="include/ini.h" />
 		<Unit filename="include/rs232.h" />
-		<Unit filename="include/trackercamera.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/DavePID.cpp" />
-		<Unit filename="src/DaveUtil.cpp" />
 		<Unit filename="src/INIReader.cpp" />
-		<Unit filename="src/davecamera2.cpp" />
-		<Unit filename="src/davemirrorcle2.cpp" />
-		<Unit filename="src/davetimer.cpp" />
-		<Unit filename="src/davetracker.cpp" />
+		<Unit filename="src/LD_Camera.cpp" />
+		<Unit filename="src/LD_MemsMirror.cpp" />
+		<Unit filename="src/LD_Pid.cpp" />
+		<Unit filename="src/LD_QuarcTracker.cpp" />
+		<Unit filename="src/LD_Timer.cpp" />
+		<Unit filename="src/LD_TrackerCamera.cpp" />
+		<Unit filename="src/LD_Util.cpp" />
 		<Unit filename="src/ini.cpp" />
 		<Unit filename="src/rs232.cpp" />
-		<Unit filename="src/trackercamera.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
