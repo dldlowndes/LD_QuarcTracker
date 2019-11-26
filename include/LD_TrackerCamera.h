@@ -72,6 +72,6 @@ namespace LD_QuarcTracker{
             LD_Camera::Subpixel_Values my_Spot_Coords;
 
     };
-} // namespace DaveTracker2
+} // namespace LD_QuarcTracker
 
 #endif //TRACKERCAMERA_H

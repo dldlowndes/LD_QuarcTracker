@@ -1,13 +1,13 @@
-#ifndef DAVETIMER_H
-#define DAVETIMER_H
+#ifndef LD_TIMER_H
+#define LD_TIMER_H
 
 #include <chrono>
 
-class DaveTimer
+class LD_Timer
 {
     public:
-        DaveTimer();
-        ~DaveTimer();
+        LD_Timer();
+        ~LD_Timer();
 
         void Start_Timer();
         void Stop_Timer();
@@ -24,4 +24,4 @@ class DaveTimer
         std::chrono::duration<long int, std::milli> timer_Difference;
 };
 
-#endif // DAVETIMER_H
+#endif // LD_TIMER_H

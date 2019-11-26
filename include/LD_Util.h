@@ -1,8 +1,8 @@
-#ifndef DAVEUTIL_H
-#define DAVEUTIL_H
+#ifndef LD_UTIL_H
+#define LD_UTIL_H
 
 #include <chrono>
 
 void MySleep(int SleepMs);
 
-#endif // DAVEUTIL_H
+#endif // LD_UTIL_H

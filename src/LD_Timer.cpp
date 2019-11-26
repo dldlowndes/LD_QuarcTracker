@@ -1,30 +1,30 @@
 #include "LD_Timer.h"
 
-DaveTimer::DaveTimer()
+LD_Timer::LD_Timer()
 {
     //ctor
 }
 
-DaveTimer::~DaveTimer()
+LD_Timer::~LD_Timer()
 {
     //dtor
 }
 
-void DaveTimer::Start_Timer(){
+void LD_Timer::Start_Timer(){
     timer_Start = std::chrono::steady_clock::now();
     timer_Started = true;
     return;
 }
 
 
-void DaveTimer::Stop_Timer(){
+void LD_Timer::Stop_Timer(){
     timer_Stop = std::chrono::steady_clock::now();
     timer_Stopped = true;
     return;
 }
 
 
-int DaveTimer::Get_Last_Time_Difference(){
+int LD_Timer::Get_Last_Time_Difference(){
     if (timer_Started){
         if (!timer_Stopped){
             Stop_Timer();

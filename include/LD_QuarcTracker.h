@@ -1,5 +1,5 @@
-#ifndef QUARCTRACKER_H
-#define QUARCTRACKER_H
+#ifndef LD_QUARCTRACKER_H
+#define LD_QUARCTRACKER_H
 
 #include "LD_Camera.h"
 #include "LD_TrackerCamera.h"
@@ -183,11 +183,11 @@ namespace LD_QuarcTracker{
             std::list<APTOutput> tracker_Data;
 
             // Timing various loop steps.
-            DaveTimer timer_Loop;
-            DaveTimer timer_Camera;
-            DaveTimer timer_Mirror;
+            LD_Timer timer_Loop;
+            LD_Timer timer_Camera;
+            LD_Timer timer_Mirror;
 
     };
-} // namespace DaveTracker2
+} // namespace LD_QuarcTracker
 
-#endif // QUARCTRACKER_H
+#endif // LD_QUARCTRACKER_H

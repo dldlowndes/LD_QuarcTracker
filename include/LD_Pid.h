@@ -1,3 +1,6 @@
+#ifndef LD_PID_H
+#define LD_PID_H
+
 #include <chrono>
 
 struct PIDParams{
@@ -43,3 +46,5 @@ struct XY_PID{
     PIDLoop x;
     PIDLoop y;
 };
+
+#endif // LD_PID_H

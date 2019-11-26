@@ -367,7 +367,7 @@ namespace LD_Camera{
         return 0;
     }
 
-} // namespace DaveCamera
+} // namespace LD_Camera
 
 int Test_AOI(LD_Camera::CameraOptions my_Options){
     LD_Camera::Camera my_Camera(my_Options);
